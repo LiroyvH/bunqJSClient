@@ -1,6 +1,6 @@
 # Discontinued
 
-This project is officially no longer being maintained by its creator, Crecket and has been archived. 
+This project is officially no longer being maintained by its creator, Crecket, and has been archived. 
 I (@LiroyvH) forked the project to submit fixes to the card creation endpoint so that this project can be used again for ordering (virtual) cards, but will also not necessarily maintain it. Using these sripts or any portion thereof is at your own risk, especially so as it's no longer being maintained. Before using it, it would be good to double-check the current API conventions, costs, etc. and try sandboxing first. (If that works... Sandbox usually doesn't.)
 
 Crecket has stopped maintaining this project, there will likely be bugs at this point so use it at your own risk.
