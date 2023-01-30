@@ -1,7 +1,7 @@
 # Discontinued
 
 This project is officially no longer being maintained by its creator, Crecket and has been archived. 
-I (@LiroyvH) forked the project to submit fixes to the card creation endpoint so that this project can be used again for ordering (virtual) cards, but will also not necessarily maintain it. Using these sripts or any portion thereof is at your own risk, especially so as it's no longer being maintained. Before using it, it would be good to double-check the current API conventions, costs, etc. and try sandboxing first. (If that works... Sandbox usually doesn't properly work.)
+I (@LiroyvH) forked the project to submit fixes to the card creation endpoint so that this project can be used again for ordering (virtual) cards, but will also not necessarily maintain it. Using these sripts or any portion thereof is at your own risk, especially so as it's no longer being maintained. Before using it, it would be good to double-check the current API conventions, costs, etc. and try sandboxing first. (If that works... Sandbox usually doesn't.)
 
 Crecket has stopped maintaining this project, there will likely be bugs at this point so use it at your own risk.
 
@@ -21,7 +21,7 @@ This project was originally built for the browser but has since then been tested
 ## Installation
 Install the library
 
--edit- WARNING: This will likely download the wrong API if you intend to use the changes in this repository. So either download the contents of this repository instead and create a .env file as per instructions and then run "npm install" and then "npm run build". OR: download the one below and then diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.))
+-edit- WARNING: This will likely download the wrong API if you intend to use the changes in this repository. So either download the contents of this repository instead and create a .env file as per instructions and then run "npm install" and then "npm run build". OR: download the one below through yarn and then diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.)) Note that when you're ready to switch to PRODUCTION api, change the .env and run "npm run build" again before proceeding to try any action against the API again.
 
 ```bash
 yarn add @bunq-community/bunq-js-client
