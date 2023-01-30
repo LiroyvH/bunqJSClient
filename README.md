@@ -21,7 +21,7 @@ This project was originally built for the browser but has since then been tested
 ## Installation
 Install the library
 
--edit- WARNING: This will likely download the wrong API if you intend to use the changes in this repository. So either download the contents of this repository instead, or download the one below and then diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.))
+-edit- WARNING: This will likely download the wrong API if you intend to use the changes in this repository. So either download the contents of this repository instead and create a .env file as per instructions and then run "npm install" and then "npm run build". OR: download the one below and then diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.))
 
 ```bash
 yarn add @bunq-community/bunq-js-client
