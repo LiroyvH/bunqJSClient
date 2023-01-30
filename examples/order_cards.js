@@ -33,7 +33,7 @@ setup()
             // personal name
             allowedCardNames[0],
             // the line on the card
-            "MAESTRO NFC",
+            "CARD DESCRIPTION",
             // initial alias for the card
             firstAlias,
             // card type
@@ -41,10 +41,10 @@ setup()
             // product type
             "MAESTRO_DEBIT",
             [
-                // assign PRIMARY, SECONDARY accounts
+                // assign PRIMARY, SECONDARY accounts and choose a four digit PIN to set
                 {
                     type: "PRIMARY",
-                    pin_code: "4321",
+                    pin_code: "1337",
                     monetary_account_id: accountInfo.id
                 }
             ]
