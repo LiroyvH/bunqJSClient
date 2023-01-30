@@ -4,6 +4,7 @@ import ApiEndpointInterface from "../Interfaces/ApiEndpointInterface";
 import PinCodeAssignmentCollection from "../Types/PinCodeAssignmentCollection";
 import CounterpartyAlias from "../Types/CounterpartyAlias";
 import CardType from "../Types/CardType";
+import ProductType from "../Types/ProductType";
 
 export default class CardDebit implements ApiEndpointInterface {
     ApiAdapter: ApiAdapter;
@@ -23,6 +24,7 @@ export default class CardDebit implements ApiEndpointInterface {
      * @param {string} description
      * @param {CounterpartyAlias} alias
      * @param {CardType} cardType
+     * @param {ProductType} productType
      * @param {PinCodeAssignmentCollection} assignments
      * @param {number} monetaryAccountIdFallback
      * @param options
@@ -34,6 +36,7 @@ export default class CardDebit implements ApiEndpointInterface {
         description: string,
         alias: CounterpartyAlias = null,
         cardType: CardType = null,
+	productType: ProductType = null,
         assignments: PinCodeAssignmentCollection = null,
         monetaryAccountIdFallback: number = null,
         options: any = {}
@@ -48,6 +51,7 @@ export default class CardDebit implements ApiEndpointInterface {
                     name_on_card: name,
                     alias: alias,
                     type: cardType,
+		    product_type: productType,
                     pin_code_assignment: assignments,
                     monetary_account_id_fallback: monetaryAccountIdFallback
                 },
