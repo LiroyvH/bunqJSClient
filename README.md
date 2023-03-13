@@ -18,10 +18,29 @@ The API session details are encrypted and stored using [forge](https://github.co
 
 This project was originally built for the browser but has since then been tested and used with NodeJS servers. If you do want to use NodeJS you can still easily create a custom storage handler (with the default being Localstorage) like described in the [installation](#installation) section.
 
+
+## Usage
+-edit by @LiroyvH- WARNING: The instructions below starting from "Installation" are from the original version by Crecket. If you follow those instructions, it will likely download the old version of this API-client without any of the changes in this repository and it will likely NOT work. Instead of following those, download the contents of my repository instead (clone this repository or download as ZIP and unpack). Then create a .env file by modifying the API_KEY field (create a key in the bunq app) in the .env.example and save it as .env (swap SANDBOX to PRODUCTION if you actually want to do something like ordering a card)). Then run "npm install" followed by "npm run build". Once that's done: you can do stuff like running "node examples/order_cards.js".  
+NOTE: if at any point you change your .env file, you must run "npm run build" again.   
+NOTE2: if it wasn't obvious yet, to use this API-client you must have node installed; which is available for all OS'es.
+
+Keep in mind that the valid fields for Card Type in order_cards.js are:  
+"MASTERCARD", "MASTERCARD_MOBILE_NFC", "MASTERCARD_VIRTUAL", "MAESTRO", "MAESTRO_MOBILE_NFC", "MAESTRO_VIRTUAL".  
+And the valid corresponding fields for Product Type are:  
+"MAESTRO_DEBIT", "MASTERCARD_DEBIT", "MASTERCARD_TRAVEL", "MASTERCARD_BUSINESS", "MASTERCARD_GREEN".
+
+Examples for virtual card creation (note: subject to change, always double check API docs! These were valid early 2023):  
+So to create a Debit DigiCard you'd set MASTERCARD_VIRTUAL and MASTERCARD_DEBIT for Card Type and Product Type respectively.  
+Or if you wish to create a virtual Maestro-card you'd do MAESTRO_VIRTUAL and MAESTRO_DEBIT for Card- and Product Type respectively.  
+Or if you wish to create an NFC-only card: MAESTRO_MOBILE_NFC or MASTERCARD_MOBILE_NFC as Card Type and MAESTRO_DEBIT or MASTERCARD_DEBIT as Product type.  
+All of the above examples show up as DigiCards and may count towards your total allowed (Digi)Cards.
+
+WARNING: Bunq's API does not warn you about any costs involved, it will simply do what you tell it to do. So ordering a physical card through this API and/or for example ordering any amount of virtual/DigiCards that make you cross the limit (25 at this time) may result in (significant) charges. The Card Type and Product Type names may also change at any time, so you may wish to check Bunq's API Documentation before using any of the above examples. So use at your own risk, with caution and check your limits!
+
+OR: download the API-client below through yarn and then manually diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.)) Note that when you're ready to switch to PRODUCTION api, change the .env to reflect that and run "npm run build" again before proceeding to try any action against the API again.
+
 ## Installation
 Install the library
-
--edit- WARNING: This will likely download the wrong API if you intend to use the changes in this repository. So either download the contents of this repository instead and create a .env file as per instructions and then run "npm install" and then "npm run build". OR: download the one below through yarn and then diff the modified files (for example: examples/order_cards.js, src/Api/CardDebit.ts, src/Types/CardTypes.ts, src/Types/ProductType.ts (yeah I forgot an s in that name, sue me.)) Note that when you're ready to switch to PRODUCTION api, change the .env and run "npm run build" again before proceeding to try any action against the API again.
 
 ```bash
 yarn add @bunq-community/bunq-js-client
