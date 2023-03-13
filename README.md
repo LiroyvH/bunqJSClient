@@ -24,12 +24,12 @@ This project was originally built for the browser but has since then been tested
 NOTE: if at any point you change your .env file, you must run "npm run build" again.   
 NOTE2: if it wasn't obvious yet, to use this API-client you must have node installed; which is available for all OS'es.
 
-Keep in mind that the valid fields for Card Type in order_cards.js are:  
+Keep in mind that the valid fields for Card Type in order_cards.js (see examples folder) are:  
 "MASTERCARD", "MASTERCARD_MOBILE_NFC", "MASTERCARD_VIRTUAL", "MAESTRO", "MAESTRO_MOBILE_NFC", "MAESTRO_VIRTUAL".  
 And the valid corresponding fields for Product Type are:  
 "MAESTRO_DEBIT", "MASTERCARD_DEBIT", "MASTERCARD_TRAVEL", "MASTERCARD_BUSINESS", "MASTERCARD_GREEN".
 
-Examples for virtual card creation (note: subject to change, always double check API docs! These were valid early 2023):  
+Examples for virtual card creation (note: subject to change, always double check API docs!) by modifying order_cards.js:  
 So to create a Debit DigiCard you'd set MASTERCARD_VIRTUAL and MASTERCARD_DEBIT for Card Type and Product Type respectively.  
 Or if you wish to create a virtual Maestro-card you'd do MAESTRO_VIRTUAL and MAESTRO_DEBIT for Card- and Product Type respectively.  
 Or if you wish to create an NFC-only card: MAESTRO_MOBILE_NFC or MASTERCARD_MOBILE_NFC as Card Type and MAESTRO_DEBIT or MASTERCARD_DEBIT as Product type.  
